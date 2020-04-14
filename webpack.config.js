@@ -56,7 +56,7 @@ const cssLoaders = extra => {
 const plugins = () => {
   const base = [
     new HtmlWebpackPlugin({
-      template: "./pages/index/index.pug",
+      template: "src/index.pug",
       minify: {
         collapseWhitespace: isProd
       }
@@ -64,15 +64,11 @@ const plugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, "src/theme/img/"),
+        from: path.resolve(__dirname, "src/assets/img/"),
         to: path.resolve(__dirname, "dist")
       },
       {
-        from: path.resolve(__dirname, "src/theme/fonts/"),
-        to: path.resolve(__dirname, "dist")
-      },
-      {
-        from: path.resolve(__dirname, "src/theme/libs/"),
+        from: path.resolve(__dirname, "src/assets/fonts/"),
         to: path.resolve(__dirname, "dist")
       }
     ]),

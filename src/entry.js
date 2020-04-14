@@ -1,2 +1,1 @@
-import * as $ from "jquery";
-
+import "./assets/scss/main.scss";
