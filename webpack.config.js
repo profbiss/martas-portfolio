@@ -95,7 +95,6 @@ module.exports = {
   optimization: optimization(),
   devServer: {
     port: 4200,
-    hot: isDev
   },
   devtool: isDev ? "source-map" : "",
   plugins: plugins(),
