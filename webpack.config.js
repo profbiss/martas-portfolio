@@ -56,7 +56,7 @@ const cssLoaders = extra => {
 const plugins = () => {
   const base = [
     new HtmlWebpackPlugin({
-      template: "src/index.pug",
+      template: "index.pug",
       minify: {
         collapseWhitespace: isProd
       }
