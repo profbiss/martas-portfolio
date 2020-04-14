@@ -18,9 +18,13 @@ html(lang="en")
         img.header__mobile-photo(src="/header-photo.jpg", alt="My photo")
         h1.header__name Марта Гойло
         span.header__desc татуировки без машинки
-        .header__video-wrapper
-          iframe.header__video(src="https://www.youtube.com/embed/HqiKUt2GnjA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
-          span.header__video-desc Что такое хэндпоук тату?<br>Смотри видео
+        .video-section
+          .video-section__wrapper
+            iframe.video-section__video(src="" data-src="https://www.youtube.com/embed/HqiKUt2GnjA" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen autoplay="1")
+            .video-section__bg
+            a.video-section__btn(href="#")
+              img.video-section__icon(src="/play-btn.png", alt="Play button")
+          span.video-section__desc Что такое хэндпоук тату?<br>Смотри видео
         img.header__scull-img(src="/scull.svg", alt="Scull pattern")
       .header__photo-col
         img.header__photo(src="/header-photo.jpg", alt="My photo")
