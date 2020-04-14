@@ -1,17 +1,18 @@
-import $ from "jquery";
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector(".video-section__btn");
+  const background = document.querySelector(".video-section__bg");
 
-$(document).ready(function () {
-  $(".video-section__btn").on("click", function (e) {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
-    const wrapper = $(this).closest(".video-section__wrapper");
+    const wrapper = btn.closest(".video-section__wrapper");
     videoPlay(wrapper);
   });
 
   function videoPlay(wrapper) {
-    const iframe = wrapper.find(".video-section__video");
-    const src = iframe.data("src");
-    $(".video-section__bg").addClass("video-section__bg_is-active");
-    $(".video-section__btn").addClass("video-section__btn_is-active")
-    iframe.attr("src", src);
+    const iframe = document.querySelector(".video-section__video");
+    const src = iframe.getAttribute("data-src");
+    background.classList.add("video-section__bg_is-active");
+    btn.classList.add("video-section__btn_is-active");
+    iframe.setAttribute("src", src);
   }
 });
