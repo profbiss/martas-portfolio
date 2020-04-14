@@ -115,19 +115,18 @@
   }
   &__scull-img {
     position: absolute;
-    left: 50px;
     bottom: 20px;
     width: 400px;
     opacity: 0.3;
     @media (max-width: $xxl) {
-      left: 30px;
+      width: 300px;
+    }
+    @media(max-width: $xl) {
+      left: -80px;
     }
     @media (max-width: $lg) {
       top: 40px;
       bottom: auto;
-    }
-    @media (max-width: $md) {
-      left: -80px;
     }
     @media (max-width: $sm) {
       left: -120px;
@@ -233,6 +232,7 @@
     left: -300px;
     font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
     font-size: 20px;
+    text-align: right;
     color: #191619;
     @media (max-width: $xxl) {
       left: -230px;
