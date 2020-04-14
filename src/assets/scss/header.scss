@@ -1,11 +1,66 @@
 .header {
+  position: relative;
   display: flex;
   &__text-col {
     flex-basis: 50%;
     background-color: $main;
   }
+  &__nav {
+    padding-top: 20px; // 15px
+    margin-left: 80px;
+    margin-right: 96px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__link {
+    text-transform: uppercase;
+    font-size: 20px; // 16px
+    color: $light-text;
+  }
+  &__name {
+    margin: 130px 0 26px 80px; // 111px
+    font-family: "Alegreya-Regular", Arial, Helvetica, sans-serif;
+    font-size: 120px; // 96px
+    color: #191619;
+  }
+  &__desc {
+    margin-left: 80px;
+    font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
+    font-size: 45px; // 32px
+    color: #191619;
+  }
+  &__video-wrapper {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    transform: translate(-50%, 0);
+  }
+  &__video-desc {
+    position: absolute;
+    left: -300px;
+    font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
+    font-size: 20px; // 16px
+    color: #191619;
+  }
+  &__scull-img {
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
+    width: 400px;
+    opacity: 0.3;
+  }
   &__photo-col {
     flex-basis: 50%;
+    flex-grow: 1;
   }
   &__photo {
     width: 100%;
