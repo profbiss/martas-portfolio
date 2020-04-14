@@ -1,14 +1,35 @@
 .header {
   position: relative;
   display: flex;
+  @media (max-width: $xl) {
+    flex-direction: column;
+  }
   &__text-col {
     flex-basis: 50%;
     background-color: $main;
+    @media (max-width: $xl) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding-bottom: 80px;
+    }
   }
   &__nav {
-    padding-top: 20px; // 15px
+    padding-top: 20px;
     margin-left: 80px;
     margin-right: 96px;
+    @media (max-width: $xxl) {
+      padding-top: 15px;
+      margin-left: 40px;
+    }
+    @media (max-width: $xl) {
+      margin-right: 40px;
+    }
+    @media(max-width: $sm) {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
   &__list {
     display: flex;
@@ -20,21 +41,63 @@
     }
   }
   &__link {
+    position: relative;
     text-transform: uppercase;
-    font-size: 20px; // 16px
+    font-size: 20px;
     color: $light-text;
+    transition: 300ms;
+    &:hover {
+      color: #191619;
+    }
+    &:hover:after {
+      width: 100%;
+      left: 0;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: #191619;
+      transition: 300ms;
+    }
+    @media (max-width: $xxl) {
+      font-size: 16px;
+    }
   }
   &__name {
-    margin: 130px 0 26px 80px; // 111px
+    margin: 130px 0 26px 80px;
     font-family: "Alegreya-Regular", Arial, Helvetica, sans-serif;
-    font-size: 120px; // 96px
+    font-size: 120px;
     color: #191619;
+    @media (max-width: $xxl) {
+      margin: 111px 0 10px 40px;
+      font-size: 96px;
+    }
+    @media (max-width: $xl) {
+      text-align: center;
+      margin: 50px 20px 10px 20px;
+    }
   }
   &__desc {
+    display: block;
     margin-left: 80px;
     font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
-    font-size: 45px; // 32px
+    font-size: 45px;
     color: #191619;
+    @media (max-width: $xxl) {
+      margin-left: 40px;
+      font-size: 32px;
+    }
+    @media (max-width: $xl) {
+      text-align: center;
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-bottom: 50px;
+    }
   }
   &__video-wrapper {
     position: absolute;
@@ -43,13 +106,44 @@
     display: flex;
     align-items: center;
     transform: translate(-50%, 0);
+    @media (max-width: $xl) {
+      position: relative;
+      flex-direction: column-reverse;
+      bottom: 0;
+    }
+  }
+  &__video {
+    width: 560px;
+    height: 315px;
+    @media (min-width: $xl) and (max-width: $xxl) {
+      width: 360px;
+      height: 200px;
+    }
+    @media(max-width: $sm) {
+      width: 100%;
+      height: 300px;
+    }
+    @media(max-width: 450px) {
+      height: 250px;
+    }
   }
   &__video-desc {
     position: absolute;
     left: -300px;
     font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
-    font-size: 20px; // 16px
+    font-size: 20px;
     color: #191619;
+    @media (max-width: $xxl) {
+      left: -230px;
+      font-size: 16px;
+    }
+    @media (max-width: $xl) {
+      position: relative;
+      left: 0;
+      display: block;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
   &__scull-img {
     position: absolute;
@@ -57,6 +151,19 @@
     bottom: 20px;
     width: 400px;
     opacity: 0.3;
+    @media (max-width: $xxl) {
+      left: 30px;
+    }
+    @media (max-width: $xl) {
+      top: 40px;
+      bottom: auto;
+    }
+    @media(max-width: $md) {
+      left: -80px;
+    }
+    @media(max-width: $sm) {
+      left: -120px;
+    }
   }
   &__photo-col {
     flex-basis: 50%;
@@ -65,5 +172,18 @@
   &__photo {
     width: 100%;
     height: 100%;
+    @media (max-width: $xl) {
+      display: none;
+    }
+  }
+  &__mobile-photo {
+    align-self: center;
+    display: none;
+    width: 250px;
+    margin-top: 80px;
+    border-radius: 50%;
+    @media (max-width: $xl) {
+      display: block;
+    }
   }
 }
