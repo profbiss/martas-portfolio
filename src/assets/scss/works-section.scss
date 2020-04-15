@@ -8,16 +8,10 @@
   &__title {
     padding-bottom: 30px;
     color: $light-text;
-    @media(max-width: $lg) {
-      text-align: center;
-    }
   }
   &__tabs {
     display: flex;
     margin-bottom: 10px;
-    @media(max-width: $lg) {
-      justify-content: center;
-    }
   }
   &__tab-btn {
     display: flex;
