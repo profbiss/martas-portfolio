@@ -1,0 +1,58 @@
+.works-section {
+  &__content {
+    padding: 100px 0 78px;
+  }
+  &__title {
+    padding-bottom: 30px;
+    color: $light-text;
+  }
+  &__tabs {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__tab-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-family: "Montserrat-Light", Arial, Helvetica, sans-serif;
+    font-size: 19px; // 16px
+    color: $light-text;
+    border: 1px solid $light-text;
+    border-radius: 5px 0 0 5px;
+    transition: 300ms;
+    &:hover {
+      background-color: $light-text;
+      color: #ffffff;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+      border-left: none;
+    }
+    &_is-active {
+      background-color: $light-text;
+      color: #ffffff;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+    justify-content: center;
+    gap: 20px;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border: 1px solid $light-text;
+    overflow: hidden;
+  }
+  &__scetch-item {
+    & img {
+      max-width: 390px;
+    }
+  }
+}
