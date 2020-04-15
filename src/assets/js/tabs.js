@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
       item.classList.remove("works-section__tab-btn_is-active")
     );
     btns[index].classList.add("works-section__tab-btn_is-active");
-    tabs.forEach((item) => (item.style.display = "none"));
+    tabs.forEach((item) => {
+      item.style.display = "none";
+    });
     tabs[index].style.display = "grid";
   }
 
-  tabsSwitcher(tabBtns, tabs)
+  tabsSwitcher(tabBtns, tabs);
 });
