@@ -91,4 +91,50 @@ html(lang="en")
             img.about-section__photo(src="about_photo.jpg", alt="It's me")
       section.form-section.side-padding
         .form-section__content.container
+          .form-section__form-col
+            h2.form-section__title.section-title Контакты
+            form.form-section__form(action="#")
+              input.form-section__input(type="text" placeholder="Имя" required)
+              input.form-section__input(type="email" placeholder="Почта" required)
+              textarea.form-section__textarea(cols="30" rows="10" placeholder="Вопрос")
+              button.form-section__btn(type="submit") Отправить
+          .form-section__contacts-col.contacts
+            .contacts__col-1
+              .conacts__item
+                img.contacts__icon(src="contact-1.svg" alt="Icon")
+                .contacts__text
+                  span.contacts__desc ТЕЛЕФОН:
+                  a.contacts__contact(href="tel.:89034384466" target="_blank") 8 903 438-44-66
+              .contacts__col-1
+                .conacts__item
+                  img.contacts__icon(src="contact-3.svg" alt="Icon")
+                  .contacts__text
+                    span.contacts__desc E-MAIL:
+                    a.contacts__contact(href="mailto:mgoylo@gmail.com" target="_blank") mgoylo@gmail.com
+              .contacts__col-1
+                .conacts__item
+                  img.contacts__icon(src="contact-5.svg" alt="Icon")
+                  .contacts__text
+                    span.contacts__desc PINTEREST:
+                    a.contacts__contact(href="www.pinterest.ru/koshmarta" target="_blank") www.pinterest.ru/koshmarta
+            .contacts__col-2
+              .conacts__item
+                img.contacts__icon(src="contact-2.svg" alt="Icon")
+                .contacts__text
+                  span.contacts__desc INSTAGRAM:
+                  a.contacts__contact(href="https://www.instagram.com/_koshmarta_/?hl=en" target="_blank") _koshmarta_
+              .contacts__col-1
+                .conacts__item
+                  img.contacts__icon(src="contact-4.svg" alt="Icon")
+                  .contacts__text
+                    span.contacts__desc МЕСТОПОЛОЖЕНИЕ:
+                    span.contacts__contact Беларусь, Гродно
+              .contacts__col-1
+                .conacts__item
+                  img.contacts__icon(src="contact-6.svg" alt="Icon")
+                  .contacts__text
+                    span.contacts__desc BEHANCE:
+                    a.contacts__contact(href="www.behance.net/koshmarta" target="_blank") www.behance.net/koshmarta
+
+
 
