@@ -36,7 +36,7 @@
     }
   }
   &__grid {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
     justify-content: center;
     gap: 20px;
