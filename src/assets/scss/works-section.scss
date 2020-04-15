@@ -1,14 +1,23 @@
 .works-section {
   &__content {
     padding: 100px 0 78px;
+    @media(max-width: $sm) {
+      padding: 70px 0;
+    }
   }
   &__title {
     padding-bottom: 30px;
     color: $light-text;
+    @media(max-width: $lg) {
+      text-align: center;
+    }
   }
   &__tabs {
     display: flex;
     margin-bottom: 10px;
+    @media(max-width: $lg) {
+      justify-content: center;
+    }
   }
   &__tab-btn {
     display: flex;
