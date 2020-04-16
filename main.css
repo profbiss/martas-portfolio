@@ -614,6 +614,9 @@ a {
     height: 250px;
   }
 }
+.works-section__item img {
+  max-width: 100%;
+}
 .works-section__scetch-item img {
   max-width: 390px;
 }
