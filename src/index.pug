@@ -10,11 +10,11 @@ html(lang="en")
         nav.header__nav
           ul.header__list
             li.header__item
-              a.header__link(href="#") Обо мне
+              a.header__link(href="#about") Обо мне
             li.header__item
-              a.header__link(href="#") Работы
+              a.header__link(href="#works") Работы
             li.header__item
-              a.header__link(href="#") Контакты
+              a.header__link(href="#contacts") Контакты
         img.header__mobile-photo(src="/header-photo.jpg", alt="My photo")
         h1.header__name Марта Гойло
         span.header__desc татуировки без машинки
@@ -30,6 +30,7 @@ html(lang="en")
         img.header__photo(src="/header-photo.jpg", alt="My photo")
     main.main
       section.works-section.side-padding
+        a(id="works")
         .works-section__content.container
           h2.works-section__title.section-title Портфолио
           .works-section__tabs
@@ -75,6 +76,7 @@ html(lang="en")
               img.works-section__work(src="work-9.jpg", alt="Work")
           a.works-section__btn(href="#") Смотреть все
       section.about-section.side-padding
+        a(id="about")
         .about-section__content.container
           .about-section__text-col
             h2.about-section__title.section-title Обо мне
@@ -90,6 +92,7 @@ html(lang="en")
           .about-section__photo-col
             img.about-section__photo(src="about_photo.jpg", alt="It's me")
       section.form-section.side-padding
+        a(id="contacts")
         .form-section__content.container
           h2.form-section__title.section-title Контакты
           .form-section__flex-wrapper
