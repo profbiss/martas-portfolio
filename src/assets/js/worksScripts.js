@@ -6,20 +6,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const worksAlbums = document.body.querySelectorAll(".works-section__grid");
   const seeAllButton = document.body.querySelector(".works-section__btn");
 
-  tabsButtonsContainer.addEventListener("click", (e) => switchAlbumByClick(e));
-  seeAllButton.addEventListener("click", (e) => showExcessWorks(e));
+  tabsButtonsContainer.addEventListener("click", (e) =>
+    tabsButtonsListener(e, switchButtons)
+  );
+  seeAllButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const currentAlbum = Array.from(worksAlbums).find(
+      (album) => album.getAttribute("style") === "display: grid;"
+    );
+    if (
+      Array.from(currentAlbum.childNodes).some((item) => {
+        return item.getAttribute("style") == "display: none;";
+      })
+    ) {
+      seeAllButton.textContent = "Показать меньше";
+      showExcessWorks(currentAlbum);
+    } else {
+      seeAllButton.textContent = "Смотреть все";
+      hideExcessWorks(currentAlbum);
+    }
+  });
 
-  function switchAlbumByClick(event) {
+  function tabsButtonsListener(event, cb) {
     if (event.target) {
       const target = event.target;
 
       event.preventDefault();
 
-      return switchAlbum(target);
+      if (target.hasAttribute("href")) {
+        iterateElements(worksAlbums, hideExcessWorks);
+        seeAllButton.textContent = "Смотреть все";
+      }
+
+      return cb(showChosenAlbum, target);
     }
   }
 
-  function switchAlbum(target = tabsButtons[0]) {
+  function switchButtons(cb = null, target = tabsButtons[0]) {
     if (!target.classList.contains("works-section__tab-btn_is-active")) {
       tabsButtons.forEach((button, index) => {
         button.setAttribute("href", "#");
@@ -27,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (button === target) {
           button.removeAttribute("href");
           button.classList.add("works-section__tab-btn_is-active");
-          return showChosenAlbum(index);
+          return cb(index);
         }
       });
     }
@@ -40,5 +63,30 @@ document.addEventListener("DOMContentLoaded", () => {
     return (worksAlbums[index].style.display = "grid");
   }
 
-  switchAlbum();
+  function iterateElements(element, cb = null) {
+    element.forEach((item, index) => {
+      if (cb !== null) {
+        cb(item);
+      }
+    });
+  }
+
+  function hideExcessWorks(album) {
+    album.childNodes.forEach((work, index) => {
+      if (index > 8) {
+        work.style.display = "none";
+      }
+    });
+  }
+
+  function showExcessWorks(album) {
+    album.childNodes.forEach((work, index) => {
+      if (index > 8) {
+        work.style.display = "block";
+      }
+    });
+  }
+
+  iterateElements(worksAlbums, hideExcessWorks);
+  switchButtons(showChosenAlbum);
 });
