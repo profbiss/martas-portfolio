@@ -1,7 +1,7 @@
 .works-section {
   &__content {
     padding: 100px 0 78px;
-    @media(max-width: $sm) {
+    @media (max-width: $sm) {
       padding: 70px 0;
     }
   }
@@ -10,7 +10,7 @@
     color: $light-text;
   }
   &__tabs {
-    display: flex;
+    display: inline-flex;
     margin-bottom: 10px;
   }
   &__tab-btn {
@@ -70,7 +70,7 @@
   &__scetch-item {
     & img {
       max-width: 390px;
-      @media(max-width: $sm) {
+      @media (max-width: $sm) {
         max-width: 240px;
       }
     }
@@ -90,7 +90,7 @@
     &:hover {
       background-color: $light-text-hover;
     }
-    @media(max-width: $xxl) {
+    @media (max-width: $xxl) {
       font-size: 16px;
     }
   }
