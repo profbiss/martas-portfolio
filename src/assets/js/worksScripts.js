@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const worksAlbums = document.body.querySelectorAll(".works-section__grid");
   const seeAllButton = document.body.querySelector(".works-section__btn");
 
-  tabsButtonsContainer.addEventListener("click", (e) =>
-    tabsButtonsListener(e, switchButtons)
-  );
+  tabsButtonsContainer.addEventListener("click", tabsButtonsListener);
   seeAllButton.addEventListener("click", (e) => {
     e.preventDefault();
     const currentAlbum = Array.from(worksAlbums).find(
@@ -27,18 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function tabsButtonsListener(event, cb) {
-    if (event.target) {
-      const target = event.target;
+  function tabsButtonsListener(e) {
+    if (e.target) {
+      const target = e.target;
 
-      event.preventDefault();
+      e.preventDefault();
 
       if (target.hasAttribute("href")) {
         iterateElements(worksAlbums, hideExcessWorks);
         seeAllButton.textContent = "Смотреть все";
       }
 
-      return cb(showChosenAlbum, target);
+      return switchButtons(showChosenAlbum, target);
     }
   }
 
